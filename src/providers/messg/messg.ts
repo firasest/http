@@ -5,6 +5,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 //import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
+import {URLSearchParams} from '@angular/http';
 /*
   Generated class for the MessgProvider provider.
 
@@ -47,11 +48,11 @@ private catchError(error: Response | any){
 constructor(private http1: Http) { }
 doGET() {
 console.log("GET");
-/*let url = `${this.apiRoot}/get`;
+let url = `${this.apiRoot}/get`;
 let search = new URLSearchParams();
 search.set('foo', 'moo');
-search.set('limit', 25);
-this.http.get(url, {search: search}).subscribe(res => console.log(res.json()));*/
+search.set('limit', '');
+this.http1.get(url, {search: search}).subscribe(res => console.log(res.json()));
 }
 doPOST() {
 console.log("POST");
